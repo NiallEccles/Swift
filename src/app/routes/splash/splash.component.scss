@@ -1,0 +1,31 @@
+section {
+  display: flex;
+  flex-direction: column;
+  margin: 5em 0;
+  img {
+    width: 10em;
+    height: 10em;
+    margin: auto;
+  }
+  h1 {
+    font-size: 4em;
+    color: white;
+    text-align: center;
+    margin: 0.3em 0;
+  }
+  button {
+    width: 15em;
+    margin: auto;
+    padding: 1em;
+    border: none;
+    border-radius: 5em;
+    text-transform: uppercase;
+    color: #2b2b2b;
+    background: #ffca5a;
+    font-weight: 600;
+    &:focus-visible {
+        outline: 3px solid white;
+        outline-offset: 3px;
+    }
+  }
+}

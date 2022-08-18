@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { ActivityService } from './services/activity/activity.service';
+import { ColyseusService } from './services/colyseus/colyseus.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'swift';
+
+  constructor(private colyseus: ColyseusService, private activity: ActivityService){}
+
+  @HostListener('window:focus', ['$event'])
+  onFocused(event: Event) {
+    this.activity.outgoingActive.next(true);
+  }
+  @HostListener('window:blur', ['$event'])
+  onBlur(event: Event) {
+    this.activity.outgoingActive.next(false);
+  }
 }

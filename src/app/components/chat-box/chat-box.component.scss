@@ -1,0 +1,45 @@
+.incoming {
+    background: white;
+    padding: 1em;
+    margin: 0 1em;
+    color: #2b2b2b;
+    border-radius: 0.8em;
+    h2, h3{
+        margin: 0;
+    }
+    .chat-info {
+        margin: 0 0 1em 0;
+        h3 {
+            padding: 0 0 1em 0;
+            border-bottom: 1px solid green;
+        }
+    }
+}
+
+.outgoing {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 2em);
+    padding: 1em;
+    background: white;
+    display: flex;
+    form{
+        width: 100%;
+    }
+    input {
+        border: none;
+        border-radius: 10em;
+        // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        padding: 1em;
+        width: calc(100% - 3em);
+        background: #e5e5e5;
+    }
+    .bump {
+        border: none;
+        border-radius: 100%;
+        background: none;
+        img{
+            width: 2em;
+        }
+    }
+}

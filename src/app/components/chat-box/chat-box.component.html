@@ -1,0 +1,15 @@
+<section class="incoming">
+  <div class="chat-info">
+    <h3>User</h3>
+    <span>{{ isActive ? "true" : "false" }}</span>
+  </div>
+  <h2>{{ incomingMessage }}</h2>
+</section>
+<section class="outgoing">
+  <form [formGroup]="form">
+    <input placeholder="Message" type="text" autocomplete="off" formControlName="message" />
+  </form>
+  <button class="bump" (click)="bump()">
+    <img src="../../../assets/bump.png" alt="" />
+  </button>
+</section>
