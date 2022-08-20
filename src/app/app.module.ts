@@ -10,6 +10,9 @@ import { ColyseusService } from './services/colyseus/colyseus.service';
 import { SplashComponent } from './routes/splash/splash.component';
 import { IntroductionComponent } from './routes/introduction/introduction.component';
 import { EnterNameComponent } from './routes/enter-name/enter-name.component';
+import { SearchingComponent } from './routes/searching/searching.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { ChatComponent } from './routes/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { EnterNameComponent } from './routes/enter-name/enter-name.component';
     ChatBoxComponent,
     SplashComponent,
     IntroductionComponent,
-    EnterNameComponent
+    EnterNameComponent,
+    SearchingComponent,
+    TopNavComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
