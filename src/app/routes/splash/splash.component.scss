@@ -2,6 +2,12 @@ section {
   display: flex;
   flex-direction: column;
   margin: 5em 0;
+  height: calc(100vh - 10em);
+  justify-content: space-around;
+  .lockup{
+    display: flex;
+    flex-direction: column;
+  }
   img {
     width: 10em;
     height: 10em;
@@ -15,7 +21,7 @@ section {
   }
   button {
     width: 15em;
-    margin: auto;
+    margin: 0 auto;
     padding: 1.5em;
     border: none;
     border-radius: 5em;

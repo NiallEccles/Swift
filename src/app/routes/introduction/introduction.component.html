@@ -2,55 +2,15 @@
   <h2>How it works</h2>
   <div class="carousel">
     <ng-container *ngFor="let content of slideContent; let i = index">
-      <ng-container *ngIf="currentItem === i" class="carousel-item">
+      <ng-container class="carousel-item">
         <div class="carousel-item-inner">
-          <h3>{{ content.title }}</h3>
+          <h3>{{i + 1}}. {{ content.title }}</h3>
           <p>{{ content.description }}</p>
         </div>
       </ng-container>
     </ng-container>
   </div>
-  <div class="carousel-controls">
-    <button
-      (click)="previousItem()"
-      [ngStyle]="{ opacity: currentItem !== 0 ? '100%' : '0%' }"
-    >
-      <svg
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 32.85 32.8"
-      >
-        <path
-          d="M16.45,0l3.2,3.3L8.75,14.15h24.1v4.55H8.75l10.9,10.9-3.2,3.2L0,16.45,16.45,0Z"
-        />
-      </svg>
-    </button>
-    <div class="pill-container">
-      <ng-container *ngFor="let content of slideContent; let i = index">
-        <div
-          class="pill"
-          [ngStyle]="{ opacity: currentItem === i ? '100%' : '75%' }"
-        ></div>
-      </ng-container>
-    </div>
-    <button
-      (click)="nextItem()"
-      [ngStyle]="{
-        opacity: currentItem !== slideContent.length - 1 ? '100%' : '0%'
-      }"
-    >
-      <svg
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 32.85 32.8"
-      >
-        <path
-          d="M16.4,32.8l-3.2-3.3,10.9-10.85H0v-4.55H24.1L13.2,3.2l3.2-3.2,16.45,16.35-16.45,16.45Z"
-        />
-      </svg>
-    </button>
-  </div>
-  <button [routerLink]="['/chat']" routerLinkActive="router-link-active"  *ngIf="currentItem === slideContent.length - 1" class="continue">
+  <button [routerLink]="['/chat']" routerLinkActive="router-link-active" class="continue">
     Continue
   </button>
 </section>
