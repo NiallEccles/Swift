@@ -1,0 +1,36 @@
+section {
+  padding: 0 1em;
+  color: white;
+  height: 100vh;
+  max-width: 25em;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  form {
+    margin: 0 auto;
+  }
+  h2 {
+    font-size: 3em;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  input {
+    border: none;
+    padding: 1em;
+    border-radius: 3em;
+    max-width: 20em;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 800;
+    &:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 3px;
+    }
+  }
+}

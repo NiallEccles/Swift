@@ -9,6 +9,7 @@ import { ChatBoxComponent } from './components/chat-box/chat-box.component';
 import { ColyseusService } from './services/colyseus/colyseus.service';
 import { SplashComponent } from './routes/splash/splash.component';
 import { IntroductionComponent } from './routes/introduction/introduction.component';
+import { EnterNameComponent } from './routes/enter-name/enter-name.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IntroductionComponent } from './routes/introduction/introduction.compon
     ChatWindowComponent,
     ChatBoxComponent,
     SplashComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    EnterNameComponent
   ],
   imports: [
     BrowserModule,
