@@ -1,3 +1,6 @@
-<app-top-nav></app-top-nav>
-<br>
-<app-chat-window></app-chat-window>
+<app-searching *ngIf="connectionStatus === 'disconnected'"></app-searching>
+<ng-container *ngIf="connectionStatus === 'connected'">
+  <app-top-nav></app-top-nav>
+  <br />
+  <app-chat-window></app-chat-window>
+</ng-container>

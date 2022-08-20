@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-enter-name',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class EnterNameComponent implements OnInit {
   form: FormGroup;
 
-  constructor() {
+  constructor(private router: Router) {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
     });
@@ -21,6 +22,7 @@ export class EnterNameComponent implements OnInit {
   submit(){
     if(!this.form.get('name')!.invalid){
       localStorage.setItem('name', this.form.value.name);
+      this.router.navigate(['/chat']);
     }
   }
 

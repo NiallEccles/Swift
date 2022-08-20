@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivityService } from 'src/app/services/activity/activity.service';
+import { ColyseusService } from 'src/app/services/colyseus/colyseus.service';
 
 @Component({
   selector: 'app-chat',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+  public connectionStatus = 'disconnected';
+
+  constructor(private activityService: ActivityService, private colyseus: ColyseusService) {
+    this.activityService.connectionStatus.subscribe((status)=>{
+      this.connectionStatus = status;
+    })
+  }
 
   ngOnInit(): void {
   }

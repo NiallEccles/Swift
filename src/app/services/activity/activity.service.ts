@@ -9,5 +9,7 @@ export class ActivityService {
   public outgoingActive = new BehaviorSubject(true);
   public incomingActive = new BehaviorSubject(true);
 
+  public connectionStatus = new BehaviorSubject('disconnected');
+
   constructor() {}
 }

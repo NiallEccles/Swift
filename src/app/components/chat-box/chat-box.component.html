@@ -1,5 +1,5 @@
 <section class="incoming">
-  <h2>{{ incomingMessage }}</h2>
+  <h2>{{ incomingMessage ? incomingMessage.message : '' }}</h2>
 </section>
 <section class="outgoing">
   <form [formGroup]="form">

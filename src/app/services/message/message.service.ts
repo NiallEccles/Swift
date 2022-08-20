@@ -7,7 +7,7 @@ import { incomingData } from 'src/app/interfaces';
 })
 export class MessageService {
 
-  public outgoingMessage = new Subject<string>();
+  public outgoingMessage = new Subject<{message: string, name: string}>();
   public incomingMessage = new Subject<incomingData>();
 
   constructor() { }

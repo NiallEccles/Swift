@@ -10,7 +10,7 @@ import { ColyseusService } from './services/colyseus/colyseus.service';
 export class AppComponent {
   title = 'swift';
 
-  constructor(private colyseus: ColyseusService, private activity: ActivityService){}
+  constructor(private activity: ActivityService){}
 
   @HostListener('window:focus', ['$event'])
   onFocused(event: Event) {

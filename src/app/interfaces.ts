@@ -1,4 +1,7 @@
 export interface incomingData {
-  message: string;
+  message: {
+    message: string;
+    name: string
+  };
   client: string;
 }

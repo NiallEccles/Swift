@@ -12,27 +12,36 @@ import { MessageService } from 'src/app/services/message/message.service';
 })
 export class ChatBoxComponent implements OnInit {
   form: FormGroup;
-  public incomingMessage: string = '';
+  public incomingMessage: { message: string; name: string } = {
+    message: '',
+    name: '',
+  };
   public isActive: boolean = true;
 
-  constructor(private messageService: MessageService, private activity: ActivityService, private bumpService: BumpService) {
+  constructor(
+    private messageService: MessageService,
+    private activity: ActivityService,
+    private bumpService: BumpService
+  ) {
     this.form = new FormGroup({
       message: new FormControl(''),
     });
 
     this.form.controls['message'].valueChanges.subscribe((message) => {
-      this.messageService.outgoingMessage.next(message);
+      this.messageService.outgoingMessage.next({message: message, name: localStorage.getItem('name')!});
     });
 
-    this.messageService.incomingMessage.subscribe((incomingData: incomingData) => {
-      this.incomingMessage = incomingData.message;
-    });
+    this.messageService.incomingMessage.subscribe(
+      (incomingData: incomingData) => {
+        this.incomingMessage = incomingData.message;
+      }
+    );
 
-    this.activity.incomingActive.subscribe((activity)=>{
+    this.activity.incomingActive.subscribe((activity) => {
       this.isActive = activity;
     });
 
-    this.bumpService.incomingBump.subscribe((bump)=>{
+    this.bumpService.incomingBump.subscribe((bump) => {
       console.log('BUMP');
     });
   }
