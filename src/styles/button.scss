@@ -1,0 +1,17 @@
+button {
+  width: 15em;
+  margin: 5em auto;
+  padding: 1.5em;
+  border: none;
+  border-radius: 5em;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  background: #ffca5a;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  &:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+  }
+}
