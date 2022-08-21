@@ -9,7 +9,7 @@ import { MessageService } from '../message/message.service';
 })
 export class ColyseusService {
 
-  private client = new Colyseus.Client('ws://localhost:2567');
+  private client = new Colyseus.Client('ws://167.71.132.22/swift-socket');
 
   constructor(private messageService: MessageService, private activity: ActivityService, private bump: BumpService) {
     this.client

@@ -1,6 +1,12 @@
-<app-searching *ngIf="connectionStatus === 'disconnected'"></app-searching>
-<ng-container *ngIf="connectionStatus === 'connected'">
-  <app-top-nav></app-top-nav>
-  <br />
-  <app-chat-window></app-chat-window>
+<div class="offline" *ngIf="!isOnline">
+  <h2>You are offline</h2>
+  <img src="../../../assets/offline.png" />
+</div>
+<ng-container *ngIf="isOnline">
+  <app-searching *ngIf="connectionStatus === 'disconnected'"></app-searching>
+  <ng-container *ngIf="connectionStatus === 'connected'">
+    <app-top-nav></app-top-nav>
+    <br />
+    <app-chat-window></app-chat-window>
+  </ng-container>
 </ng-container>
