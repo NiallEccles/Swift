@@ -16,7 +16,6 @@ export class ColyseusService {
       .joinOrCreate('chat')
       .then((room) => {
         console.log(room.sessionId, 'joined', room.name);
-        this.activity.connectionStatus.next('connected');
 
         room.onMessage("messages",(message)=>{
           this.messageService.incomingMessage.next(message);
@@ -30,8 +29,17 @@ export class ColyseusService {
           this.bump.incomingBump.next(1);
         });
 
+        room.onMessage("join", (message) => {
+          console.log(message);
+          if(message.length === 1) {
+            return;
+          } else {
+            this.activity.connectionStatus.next('connected');
+          }
+        });
+
         room.onMessage("leave", () => {
-          this.activity.connectionStatus.next('connected');
+          this.activity.connectionStatus.next('disconnected');
         });
 
         this.messageService.outgoingMessage.subscribe((message) => {
