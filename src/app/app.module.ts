@@ -13,6 +13,7 @@ import { EnterNameComponent } from './routes/enter-name/enter-name.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { ChatComponent } from './routes/chat/chat.component';
 import { SearchingComponent } from './components/searching/searching.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchingComponent } from './components/searching/searching.component';
     EnterNameComponent,
     SearchingComponent,
     TopNavComponent,
-    ChatComponent
+    ChatComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

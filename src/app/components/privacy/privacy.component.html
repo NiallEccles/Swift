@@ -1,0 +1,9 @@
+<button class="no-bg" (click)="toggleModal()">Privacy</button>
+<div class="modal" *ngIf="modalOpen">
+    <div>
+        <h2>Privacy</h2>
+        <p>We <u>do not</u> store any data you send.</p>
+        <p>If you choose to enter a name, it will be saved on your device and sent to the other person <u>only</u>.</p>
+    </div>
+    <button class="no-bg dark-hover" (click)="toggleModal()">Close</button>
+</div>

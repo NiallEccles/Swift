@@ -30,7 +30,6 @@ export class ColyseusService {
         });
 
         room.onMessage("join", (message) => {
-          console.log(message);
           if(message.length === 1) {
             return;
           } else {
