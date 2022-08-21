@@ -13,7 +13,6 @@ export class ChatComponent implements OnInit {
 
   constructor(private activityService: ActivityService, private colyseus: ColyseusService) {
     this.activityService.connectionStatus.subscribe((status)=>{
-      console.log(status);
       this.connectionStatus = status;
     })
   }

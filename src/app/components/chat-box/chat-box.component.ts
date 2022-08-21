@@ -41,9 +41,7 @@ export class ChatBoxComponent implements OnInit {
       this.isActive = activity;
     });
 
-    this.bumpService.incomingBump.subscribe((bump) => {
-      console.log('BUMP');
-    });
+    this.bumpService.incomingBump.subscribe((bump) => {});
   }
 
   ngOnInit(): void {}

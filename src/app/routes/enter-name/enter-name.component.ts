@@ -12,7 +12,7 @@ export class EnterNameComponent implements OnInit {
 
   constructor(private router: Router) {
     this.form = new FormGroup({
-      name: new FormControl('', [Validators.required]),
+      name: new FormControl(''),
     });
   }
 

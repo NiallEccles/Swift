@@ -4,7 +4,7 @@
     <input formControlName="name" type="text" placeholder="name"/>
   </form>
   <!-- <p>You can change this later.</p> -->
-  <p *ngIf="form.get('name')!.invalid && (form.get('name')!.dirty || form.get('name')!.touched)">Name is invalid</p>
+  <!-- <p *ngIf="form.get('name')!.invalid && (form.get('name')!.dirty || form.get('name')!.touched)">Name is invalid</p> -->
   <button
     class="continue"
     (click)="submit()"
